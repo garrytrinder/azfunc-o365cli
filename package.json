@@ -1,10 +1,17 @@
 {
-  "name": "azfunc-o365",
+  "name": "azfunc-o365cli",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "author": {
+    "name": "Garry Trinder",
+    "email": "garry.trinder@live.com",
+    "url": "https://garrytrinder.github.io"
+  },
+  "dependencies": {
+    "@pnp/office365-cli": "^2.3.0"
+  },
   "devDependencies": {}
 }

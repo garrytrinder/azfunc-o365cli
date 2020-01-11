@@ -10,13 +10,15 @@ module.exports = async function (context, req) {
         }
     }
 
+    const cliPath = `${__dirname}/../node_modules/.bin/o365`;
+
     const login =
         { stdout, stderr }
-        = await exec(`o365 login --authType password --userName '${process.env.USERNAME}' --password '${process.env.PASSWORD}'`);
+        = await exec(`${cliPath} login --authType password --userName '${process.env.SERVICEACCOUNT_NAME}' --password '${process.env.SERVICEACCOUNT_PASSWORD}'`);
 
     const web =
         { stdout, stderr }
-        = await exec(`o365 spo web get --webUrl ${req.body.webUrl} --output json`)
+        = await exec(`${cliPath} spo web get --webUrl ${req.body.webUrl} --output json`)
 
     context.res = {
         body: web.stdout
