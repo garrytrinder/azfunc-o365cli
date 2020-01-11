@@ -94,3 +94,4 @@ appsettings.json
 local.settings.json
 
 *.http
+.DS_Store
